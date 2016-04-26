@@ -1,7 +1,7 @@
-% [idx,C,sumd,D] = kmeans(channels, 50);
-% for i = 1 : size(idx)
-%     idx(i,2) = i;
-% end
+[idx,C,sumd,D] = kmeans(channels, 50);
+for i = 1 : size(idx)
+    idx(i,2) = i;
+end
 resultIdx = sortrows(idx,1);
 
 gaussianmodel = [];
@@ -10,7 +10,7 @@ id = 0;
 clusterIdx = 1;
 for i = 1 : size(resultIdx, 1)
     if id == resultIdx(i,1)
-        clusterchannel = vertcat(clusterchannel, channels(id,:));
+        clusterchannel = vertcat(clusterchannel, channels(resultIdx(i,2),:));
     else
         if(size(clusterchannel,1) ~= 0)
             gaussianmodel(clusterIdx).mu = mean(clusterchannel(:,:));
