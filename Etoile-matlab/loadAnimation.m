@@ -10,7 +10,7 @@ addpath('C:/Users/Jing/Documents/Matlab-TSI-R2014b/bin')
 % end
 % az = 0;
 % el = 90;
-channels(:,:) = (0)
+
 bvhPlayData(skel, channels, frameLength)
 
 % pos = zeros(frames, 26 * 3);

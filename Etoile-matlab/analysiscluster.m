@@ -8,9 +8,16 @@ gaussianmodel = [];
 clusterchannel = [];
 id = 0;
 clusterIdx = 1;
+
+channelsReal = channels;
+for i = 1 : size(channelsReal, 1)
+    channelsReal(i, 1 : 3) =  channelsReal(i, 1 : 3) * 0.01;
+    channelsReal(i, 4 : size(channelsReal, 2)) =  channelsReal(i, 4 : size(channelsReal, 2)) * 3.14159265 / 180.0;
+end 
+
 for i = 1 : size(resultIdx, 1)
     if id == resultIdx(i,1)
-        clusterchannel = vertcat(clusterchannel, channels(resultIdx(i,2),:));
+        clusterchannel = vertcat(clusterchannel, channelsReal(resultIdx(i,2),:));
     else
         if(size(clusterchannel,1) ~= 0)
             gaussianmodel(clusterIdx).mu = mean(clusterchannel(:,:));
@@ -18,7 +25,7 @@ for i = 1 : size(resultIdx, 1)
             clusterIdx = clusterIdx + 1;
         end
         id = resultIdx(i,1);
-        clusterchannel = channels(id,:);
+        clusterchannel = channelsReal(id,:);
     end
 end
 gaussianmodel(clusterIdx).mu = mean(clusterchannel(:,:));
