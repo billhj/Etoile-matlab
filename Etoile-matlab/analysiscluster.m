@@ -1,4 +1,4 @@
-[idx,C,sumd,D] = kmeans(channels, 200);
+[idx,C,sumd,D] = kmeans(channels, 100);
 for i = 1 : size(idx)
     idx(i,2) = i;
 end
