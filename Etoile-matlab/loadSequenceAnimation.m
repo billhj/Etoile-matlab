@@ -9,7 +9,7 @@ for i = 1 : size(m, 2)
 end
 for i = 1 : size(channels, 1)
     channels(i, 1) = 0;
-    channels(i, 2) = 0;
+    %channels(i, 2) = 0;
     channels(i, 3) = 0;
     channels(i, 4) = 0;
     channels(i, 5) = 0;
