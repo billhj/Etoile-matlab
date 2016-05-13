@@ -1,4 +1,4 @@
-bvhPlayData(m(1).skel, C(6, :) * 180 / 3.14159265, 1)
+%bvhPlayData(m(1).skel, C(6, :) * 180 / 3.14159265, 1)
 
 MyFolderInfo = dir('C:\Users\Jing\Documents\GitHub\Etoile2015\mdata2\*.bvh')
 m = [];

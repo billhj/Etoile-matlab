@@ -13,7 +13,13 @@ for i = 1 : size(gaussianmodel,2)
     fprintf(fileID, '\n');
     for h = 1:size(gaussianmodel(i).cov,1)
         for w = 1:size(gaussianmodel(i).cov,2)
-            fprintf(fileID, '%f ', gaussianmodel(i).cov(h,w));
+            fprintf(fileID, '%f ', gaussianmodel(i).cov_noise(h,w));
+        end
+    end
+    fprintf(fileID, '\n');
+    for h = 1:size(gaussianmodel(i).incov,1)
+        for w = 1:size(gaussianmodel(i).incov,2)
+            fprintf(fileID, '%f ', gaussianmodel(i).incov(h,w));
         end
     end
     fprintf(fileID, '\n');
