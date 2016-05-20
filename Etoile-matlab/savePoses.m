@@ -21,7 +21,8 @@ end
 
 fileID = fopen('poses.txt','w');
 sizechan = size(chan, 2);
-
+fprintf(fileID, '%i ', sizechan);
+fprintf(fileID, '\n');
 for i = 1 : size(chan,1)
     for j = 1:size(chan,2)
         fprintf(fileID, '%f ', chan(i,j));
