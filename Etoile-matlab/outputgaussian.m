@@ -2,7 +2,7 @@
 %     bvhPlayData(m(1).skel, gaussianmodel(i).mu * 180 / 3.14159265, 0.5)
 % end
 %bvhPlayData(m(1).skel, gaussianmodel(36).mu * 180 / 3.14159265, 0.5)
-fileID = fopen('gaussian.txt','w');
+fileID = fopen('allgaussian10.txt','w');
 sizeMu = size(gaussianmodel(1).mu, 2);
 
 for i = 1 : size(gaussianmodel,2)

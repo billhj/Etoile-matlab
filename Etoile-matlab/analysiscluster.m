@@ -1,4 +1,4 @@
-[idx,C,sumd,D, midx,info] = kmedoids(channels, 100);
+[idx,C,sumd,D, midx,info] = kmedoids(channels, 10);
 for i = 1 : size(idx)
     idx(i,2) = i;
 end
