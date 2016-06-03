@@ -1,4 +1,4 @@
-[idx,C,sumd,D, midx,info] = kmedoids(channels, 10);
+[idx,C,sumd,D, midx,info] = kmedoids(channels, 100);
 for i = 1 : size(idx)
     idx(i,2) = i;
 end
@@ -53,7 +53,7 @@ gaussianmodel(clusterIdx).mu = median(clusterchannel(:,:));
 gaussianmodel(clusterIdx).cov = cov(clusterchannel(:,:));
 
 for i = 1 : size(gaussianmodel, 2)
-    gaussianmodel(i).cov_noise = gaussianmodel(i).cov + eye(size(gaussianmodel(i).cov, 1))*0.001 ;
+    gaussianmodel(i).cov_noise = gaussianmodel(i).cov + eye(size(gaussianmodel(i).cov, 1))*0.01 ;
     gaussianmodel(i).incov = inv(gaussianmodel(i).cov_noise);
 end
 
